@@ -1,0 +1,11 @@
+# GET http://127.0.0.1:5000/get_location_names HTTP/1.1
+
+POST http://127.0.0.1:5000/predict_home_price HTTP/1.1
+Content-Type: application/json
+
+{
+    "total_sqft": 1000,
+    "location":  "1st Phase JP Nagar",
+    "bhk": 2,
+    "bath": 2
+}
