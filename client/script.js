@@ -18,6 +18,11 @@ function getBHKValue() {
     return -1; // Invalid Value
 }
 
+function getReadyToMoveValue() {
+    var checkbox = document.getElementById("readyToMoveBtn");
+    return checkbox.checked ? 1 : 0;
+}
+
 function onClickedEstimatePrice() {
     console.log("Estimate price button clicked");
     var sqft = document.getElementById("uiSqft");
@@ -25,6 +30,7 @@ function onClickedEstimatePrice() {
     var bathrooms = getBathValue();
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
+    var ready_to_move = getReadyToMoveValue();
 
     var url = "http://127.0.0.1:5000/predict_home_price";
 
@@ -35,6 +41,7 @@ function onClickedEstimatePrice() {
             total_sqft: parseFloat(sqft.value),
             bhk: bhk,
             bath: bathrooms,
+            ready_to_move: ready_to_move,
             location: location.value
         }),
         contentType: "application/json",

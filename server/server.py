@@ -21,12 +21,13 @@ def predict_home_price():
         return jsonify({"error": "No JSON received"}), 400
 
     total_sqft = float(data['total_sqft'])
+    ready_to_move = int(data['ready_to_move'])
     bhk = int(data['bhk'])
     bath = int(data['bath'])
     location = data['location']
 
     response = jsonify({
-        'estimated_price': util.get_estimated_price(location,total_sqft,bhk,bath)
+        'estimated_price': util.get_estimated_price(location,total_sqft,bhk,bath,ready_to_move)
     })
 
     response.headers.add('Access-Control-Allow-Origin', '*')

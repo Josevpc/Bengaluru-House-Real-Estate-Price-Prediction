@@ -7,5 +7,6 @@ Content-Type: application/json
     "total_sqft": 1000,
     "location":  "1st Phase JP Nagar",
     "bhk": 2,
-    "bath": 2
+    "bath": 2,
+    "ready_to_move": 1
 }
