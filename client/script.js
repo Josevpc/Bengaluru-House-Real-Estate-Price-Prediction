@@ -19,7 +19,7 @@ function getBHKValue() {
 }
 
 function getReadyToMoveValue() {
-    var checkbox = document.getElementById("readyToMoveBtn");
+    var checkbox = document.getElementById("uiReadyToMove");
     return checkbox.checked ? 1 : 0;
 }
 
